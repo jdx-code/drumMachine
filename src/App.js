@@ -135,26 +135,27 @@ const App = () => {
     }
 
     return(
-        <div class="container" id="drum-machine">
+      
+        <div className="container" id="drum-machine">   
             <div id="display">
                 <h1>Drum Machine</h1>
                 <p>{pressedKey}</p>
-            </div>
-
-              {
+            </div>         
+          <div className="myContainer">
+            {
                 bankTwo.map((drumElement) => {
                     return (
 
-                        <div className="drum-pad-area">                        
-                            <div class="col">
+                        <div className="drum-pad-area">                                                    
                               <button className="drum-pad" id={drumElement.id} onClick={()=>{trigger(drumElement.keyTrigger)}}>{drumElement.keyTrigger}
                                 <audio src={drumElement.url} className="clip" id={drumElement.keyTrigger}/>
-                              </button>                            
-                            </div>                  
+                              </button>                                                        
                         </div>                        
+
                     )
                 })
-              }    
+              } 
+          </div>
 
         <Footer />
         </div>
